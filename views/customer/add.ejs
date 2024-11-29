@@ -1,1 +1,91 @@
-<h1>customer</h1>
+<div class="col mt-4 py-3" style="margin-left: 30px;">
+    <div class="row">
+      <!-- Breadcrumb -->
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Principal</a></li>
+            <li class="breadcrumb-item active">Nuevo usuario</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  
+  
+  <form action="/register" method="POST">
+    <div class="container">
+      <!-- Nombre y Apellido -->
+      <div class="row form-group mb-4">
+        <div class="col-md-6">
+          <label for="firstName">Nombre</label>
+          <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Nombre" required>
+        </div>
+        <div class="col-md-6">
+          <label for="lastName">Apellido</label>
+          <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Apellido" required>
+        </div>
+      </div>
+  
+      <!-- Matrícula y Lector RFID -->
+<div class="row form-group mb-4">
+    <!-- Campo de Matrícula -->
+    <div class="col-md-6">
+      <label for="matricula">Matrícula</label>
+      <input type="text" class="form-control" id="matricula" name="matricula" placeholder="Matrícula" required>
+    </div>
+  
+    <!-- Campo de RFID con botón -->
+    <div class="col-md-6">
+      <label for="rfid">Lector RFID</label>
+      <div class="input-group">
+        <input type="text" class="form-control" id="rfid" name="rfid" placeholder="Código RFID" required>
+        <button type="button" class="btn btn-success" id="readRFID">Leer RFID</button>
+      </div>
+    </div>
+  </div>
+  
+  
+      <!-- Materia y Paralelo -->
+      <div class="row form-group mb-4">
+        <div class="col-md-6">
+          <label for="materia">Materia</label>
+          <select class="form-control" id="materia" name="materia" required>
+            <option value="" disabled selected>Seleccione una materia</option>
+            <option value="Telemetría">Telemetría</option>
+            <option value="AMST">Ambientes Inteligentes</option>
+            <option value="RIS">Redes Inalámbricas</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label for="paralelo">Paralelo</label>
+          <select class="form-control" id="paralelo" name="paralelo" required>
+            <option value="" disabled selected>Seleccione un paralelo</option>
+            <option value="101">101</option>
+            <option value="102">102</option>
+            <option value="103">103</option>
+            <option value="104">104</option>
+          </select>
+        </div>
+      </div>
+  
+      <!-- Rol: Profesor o Estudiante -->
+      <div class="row form-group mb-4">
+        <div class="col-md-12">
+          <label for="role">Rol</label>
+          <select class="form-control" id="role" name="role" required>
+            <option value="" disabled selected>Seleccione un rol</option>
+            <option value="Profesor">Profesor</option>
+            <option value="Estudiante">Estudiante</option>
+          </select>
+        </div>
+      </div>
+  
+      <!-- Botón de envío -->
+      <div class="form-group text-center">
+        <button type="submit" class="btn btn-primary">Agregar Usuario</button>
+        <a href="/" class="btn btn-secondary">Cancelar</a>
+      </div>
+    </div>
+  </form>
+  

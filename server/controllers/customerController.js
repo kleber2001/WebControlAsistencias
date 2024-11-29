@@ -15,7 +15,19 @@ exports.addCustomer = async(req, res)=>{
 
     const locals = {
         title : 'Nuevo registro',
-        description : 'Ingreso de nuebo usuario'
+        description : 'Ingreso de nuevo usuario'
+    }
+res.render('customer/add', locals);
+}
+
+// GET ADD USER
+
+exports.postCustomer = async(req, res)=>{
+    
+    console.log(req.body);
+    const locals = {
+        title : 'Nuevo registro añadido',
+        description : 'Ingreso de nuevo usuario'
     }
 res.render('customer/add', locals);
 }
