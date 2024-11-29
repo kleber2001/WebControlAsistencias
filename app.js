@@ -15,15 +15,14 @@ app.use(expressLayout);
 app.set('layout','./layouts/main');
 app.set('view engine','ejs');
 
-//Home
-app.get('/',(req,res) =>{
-    
-    const locals = {
-        title: 'Asistencia',
-        description: 'Control de asistencia en LST'
-    }
-    res.render('index',locals)
-});
+//routes home
+app.use('/', require('./server/routes/customer'));
+
+//error 404
+
+app.get('*',(req,res)=>{
+    res.status(404).render('404')
+})
 
 app.listen(port, ()=>{
     console.log('App listening in port:',port)
