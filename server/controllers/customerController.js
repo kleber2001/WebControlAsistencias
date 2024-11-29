@@ -17,7 +17,7 @@ exports.addCustomer = async(req, res)=>{
         title : 'Nuevo registro',
         description : 'Ingreso de nuevo usuario'
     }
-res.render('customer/add', locals);
+    res.render('customer/add', locals);
 }
 
 // GET ADD USER
@@ -29,5 +29,5 @@ exports.postCustomer = async(req, res)=>{
         title : 'Nuevo registro añadido',
         description : 'Ingreso de nuevo usuario'
     }
-res.render('customer/add', locals);
+    res.render('customer/add', locals);
 }

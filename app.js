@@ -25,7 +25,7 @@ app.use('/', require('./server/routes/customer'));
 
 //error 404
 
-app.get('*',(req,res)=>{
+app.get('/*',(req,res)=>{
     res.status(404).render('404')
 })
 
