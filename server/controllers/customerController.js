@@ -1,3 +1,6 @@
+const User = require('../models/Customer');
+const mongoose = require('mongoose');
+
 //GET HOME 
 
 exports.homepage = async(req, res)=>{
@@ -25,9 +28,24 @@ exports.addCustomer = async(req, res)=>{
 exports.postCustomer = async(req, res)=>{
     
     console.log(req.body);
-    const locals = {
-        title : 'Nuevo registro añadido',
-        description : 'Ingreso de nuevo usuario'
+
+    const newUser = new User({
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        matricula: req.body.matricula,
+        lector: req.body.lector,
+        materia: req.body.materia,
+        paralelo: req.body.paralelo,
+        role: req.body.role
+
+    });
+
+    try {
+
+        await User.create(newUser);
+        res.redirect('/');
+    } catch (error) {
+        console.log(error);
     }
-    res.render('customer/add', locals);
+
 }
