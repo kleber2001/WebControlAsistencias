@@ -10,10 +10,9 @@ const CustomerSchema = new Schema({
         type: String,
         require: true
     },
-    matricula: {
+    identificacion: {
         type: String,
-        require: true,
-        unique: true
+        require: true
     },
     lector: {
         type: String,
@@ -25,7 +24,7 @@ const CustomerSchema = new Schema({
     },
     paralelo: {
         type: String,
-        require: true
+        require: false
     },
     role: {
         type: String,

@@ -17,8 +17,10 @@ exports.homepage = async(req, res)=>{
 exports.addCustomer = async(req, res)=>{
 
     const locals = {
+        
         title : 'Nuevo registro',
         description : 'Ingreso de nuevo usuario'
+        
     }
     res.render('customer/add', locals);
 }
@@ -29,10 +31,12 @@ exports.postCustomer = async(req, res)=>{
     
     console.log(req.body);
 
+    const paralelo = req.body;
+
     const newUser = new User({
         firstName: req.body.firstName,
         lastName: req.body.lastName,
-        matricula: req.body.matricula,
+        identificacion: req.body.identificacion,
         lector: req.body.lector,
         materia: req.body.materia,
         paralelo: req.body.paralelo,
@@ -40,10 +44,11 @@ exports.postCustomer = async(req, res)=>{
 
     });
 
-    try {
 
+    try {
+    
         await User.create(newUser);
-        res.redirect('/');
+        res.redirect('/add');
     } catch (error) {
         console.log(error);
     }
