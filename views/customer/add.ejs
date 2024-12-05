@@ -10,12 +10,19 @@
 </head>
 <body>
 
+  <% if (message) { %>
+    <div class="alert alert-<%= messageType %> mt-3" role="alert">
+        <%= message %>
+    </div>
+<% } %>
+
   <script>
 
     document.addEventListener("DOMContentLoaded",()=>{
       const selectRol = document.getElementById("role");
       const selectParalelo = document.getElementById("paralelo");
       const selectMateria = document.getElementById("materia");
+    
 
       selectParalelo.closest(".col-md-6").style.display = "none";
       selectMateria.closest(".col-md-6").style.display = "none";
@@ -79,7 +86,7 @@
     <!-- Campo de Matrícula -->
     <div class="col-md-6">
       <label for="identificacion">Identificación</label>
-      <input type="text" class="form-control" id="identificacion" name="identificacion" placeholder="Identificación" required>
+      <input type="text" class="form-control" id="identificacion" name="identificacion" placeholder="Identificación" maxlength="10" required>
     </div>
   
     <!-- Campo de RFID con botón -->
