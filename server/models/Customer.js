@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
+const now = new Date();
+const offset = -5;
+const localDate = new Date(now.getTime()+offset*60*60*1000);
+
 const CustomerSchema = new Schema({
     firstName: {
         type: String,
@@ -32,7 +36,7 @@ const CustomerSchema = new Schema({
     },
     createAt:{
         type: Date,
-        default: Date.now()
+        default: localDate.toISOString()
     }
 });
 
